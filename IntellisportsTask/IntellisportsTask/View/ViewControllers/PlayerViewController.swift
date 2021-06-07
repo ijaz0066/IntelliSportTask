@@ -47,7 +47,7 @@ class PlayerViewController: UIViewController {
     
     @IBAction func CloseDetailView(_ sender: UIButton) {
         self.playerDetailViewHeightConstraint.constant = 0
-        UIView.animate(withDuration: 0.1) {
+        UIView.animate(withDuration: 0.3) {
             self.view.layoutIfNeeded()
         }
         
@@ -94,7 +94,7 @@ extension PlayerViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.playerDetailViewHeightConstraint.constant = 500
-        UIView.animate(withDuration: 0.1) {
+        UIView.animate(withDuration: 0.3) {
             self.view.layoutIfNeeded()
         }
         var selectedPlayer: Player!
