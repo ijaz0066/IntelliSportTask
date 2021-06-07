@@ -1,0 +1,6 @@
+framework module Pods_IntellisportsTask {
+  umbrella header "Pods-IntellisportsTask-umbrella.h"
+
+  export *
+  module * { export * }
+}
