@@ -97,9 +97,12 @@ extension PlayerViewController: UITableViewDataSource, UITableViewDelegate {
         UIView.animate(withDuration: 0.1) {
             self.view.layoutIfNeeded()
         }
-        let selectedPlayer = players[indexPath.row]
+        var selectedPlayer: Player!
+        if searchTextField.text == "" { selectedPlayer = players[indexPath.row] }
+        else { selectedPlayer = filteredPlayers![indexPath.row] }
         name.text = selectedPlayer.name
         profileImageView.sd_setImage(with: URL(string: selectedPlayer.profileImage), placeholderImage: nil, options: .highPriority, completed: nil)
+        playerDetailView.backgroundColor = selectedPlayer.category.color()
         
         tableView.isUserInteractionEnabled = false
         tableView.alpha = 0.5
