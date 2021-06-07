@@ -16,7 +16,7 @@ class PlayerService {
     
     func getPlayers(compilitionHandler: @escaping (_ players: [Player]?, _ error: Error?)->Void) {
         
-        var request = URLRequest(url: URL(string: "https://pushchadev.hopto.org/test.json")!)
+        var request = URLRequest(url: IntelliApiUrl.player())
         request.httpMethod = "GET"
 
         URLSession.shared.dataTask(with: request, completionHandler: { data, response, error -> Void in
